@@ -217,68 +217,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &749486943
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8418512780314122779, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_Name
-      value: L-Tetramino
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8710357913288896703, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
---- !u!1 &749486944 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8418512780314122779, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
-  m_PrefabInstance: {fileID: 749486943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,8 +252,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.02313989, g: 0.028816083, b: 0.03773582, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -401,10 +339,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tetraminoProperties:
-  - name: T-Block
-    rotationAnchorPoint: {x: 0, y: 0}
   - name: L-Block
     rotationAnchorPoint: {x: 0, y: 0}
+    spawnOffset: {x: 0, y: 1, z: 0}
+  - name: T-Block
+    rotationAnchorPoint: {x: 0, y: 0}
+    spawnOffset: {x: 0, y: 0, z: 0}
+  - name: I-Block
+    rotationAnchorPoint: {x: 0, y: 0}
+    spawnOffset: {x: -0.5, y: 0.5, z: 0}
+  - name: Z-Block
+    rotationAnchorPoint: {x: 0, y: 0}
+    spawnOffset: {x: 0, y: 0, z: 0}
+  - name: Inv-L-Block
+    rotationAnchorPoint: {x: 0, y: 0}
+    spawnOffset: {x: 0, y: 1, z: 0}
+  - name: Inv-Z-Block
+    rotationAnchorPoint: {x: 0, y: 0}
+    spawnOffset: {x: 0, y: 0, z: 0}
+  - name: Blocky-Block
+    rotationAnchorPoint: {x: 0, y: 0}
+    spawnOffset: {x: -0.5, y: 0.5, z: 0}
 --- !u!4 &1675655672
 Transform:
   m_ObjectHideFlags: 0
@@ -450,18 +405,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardSize: {x: 8, y: 16}
+  floodLevel: 16
   blockTypes:
   - {fileID: 8418512780314122779, guid: 5adf3d3fb50db4a4483cf57de3a0e486, type: 3}
   - {fileID: 5669734584441370423, guid: 54a32dd607828c34594a5301ad5aa068, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7667103895045221436, guid: d2ed251e47b48a640a245d38a29999e4, type: 3}
+  - {fileID: 3963585666353543381, guid: 08e5b09a0e917bb48b9ad94798b2d293, type: 3}
+  - {fileID: 4776373303321223532, guid: e9b953aaebc3a0541a9e61987503b45b, type: 3}
+  - {fileID: 6950341446325710082, guid: d95deb6adf742e741a127283f1edebc2, type: 3}
+  - {fileID: 358582098919393404, guid: c4f59b8fab442c74bac805760a9a9299, type: 3}
   tilePrefab: {fileID: 6880122943510764674, guid: 4ff9a9f40df7a514ab307c723e9eb64c, type: 3}
   cam: {fileID: 963194227}
-  blockFallSpeed: 1
-  currentTetramino: {fileID: 749486944}
+  blockFallSpeed: 0.5
+  currentTetramino: {fileID: 0}
+  database: {fileID: 1675655671}
+  placementPoints: 0
+  pointsToWin: 15
   currentGameState: 0
 --- !u!4 &2124453679
 Transform:
@@ -486,4 +445,3 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 2124453679}
   - {fileID: 1675655672}
-  - {fileID: 749486943}
